@@ -19,115 +19,31 @@
 __Вывод: скрипт работает__
 
 ## Задание 2 - Использование Git Flow в проекте
- 
-Предположим, у вас есть задача на создание новой функциональности для вашего проекта с использованием Git Flow. Давайте рассмотрим конкретный пример. В примере важен не сам проект и его код (его тут вообще как такового нет), а принцип работы Git Flow.
 
-1. Убедитесь, что Git Flow установлен на локальной машине:
+## Feature
+Инициализируем создаем фичу git-flow:
+![image](https://github.com/user-attachments/assets/57b158e4-ad57-4c81-be72-f77e81aa3977)
 
-```
-sudo apt-get install git-flow
-```
+Теперь наполняем ее содержимым и соединяем обратно с нашей веткой `develop`:
+![image](https://github.com/user-attachments/assets/debaac9a-7ca3-4a9c-a057-31975e3d5076)
 
-2. В корне репозитория выполните инициализацию Git Flow.
+## Release
 
-```
-git flow init
-```
+Создаем релиз:
+![image](https://github.com/user-attachments/assets/a95ea45d-6cb5-4304-9cba-9ea67a507f49)
 
-3. Создайте ветку для новой функциональности, допустим она называется "task-management":
+Выпускаем релиз:
+![image](https://github.com/user-attachments/assets/accdb14d-e6c3-480b-9e23-6039b4fc8986)
 
-```
-git flow feature start task-management
-```
+## Hotfix
 
-4. Внесите изменения в код для добавления функционала управления задачами (например, в файл task_manager.py):
+Делаем хотфикс:
+![image](https://github.com/user-attachments/assets/7b08fa7f-8387-431e-ad9b-aae01bd95184)
 
-```
-def create_task(title, description):
-    # Логика создания задачи
-    print(f"Создана новая задача: {title}")
-```
+Завершаем работу над хотфиксом:
+![image](https://github.com/user-attachments/assets/48e8b4cf-4d9c-4527-a280-2027cca99f31)
 
-Выполните коммит изменения по мере разработки:
+## Push
 
-```
-git add task_manager.py
-git commit -m "Добавлен функционал управления задачами"
-
-
-```
-
-5. После завершения разработки функции завершите фичу и объедините ее с основной веткой:
-
-```
-git flow feature finish task-management
-
-```
-
-Git Flow автоматически переключится на ветку develop и выполнит слияние. Если есть конфликты, их нужно разрешить.
-
-6. Переключитесь на ветку "develop" и начните создание релиза:
-
-```
-git checkout develop
-git flow release start v1.0.0
-```
-
-7. Внесите изменения, связанные с релизом (например, обновите версию в файле version.txt):
-
-```
-echo "v1.0.0" > version.txt
-git add version.txt
-git commit -m "Обновлена версия для релиза v1.0.0"
-
-```
-
-8. Завершите релиз и объедините его с ветками "develop" и "main":
-
-```
-git flow release finish v1.0.0
-```
-
-9. Если в процессе использования выявлена критическая ошибка, создайте hotfix (у нас конечно же ошибки никакой не возникнет, но hotfix все равно создаем):
-
-```
-git flow hotfix start hotfix-1.0.1
-```
-
-10. Внесите изменения для исправления ошибки и коммитите:
-
-```
-# Исправление ошибки
-git add file_with_error.py
-git commit -m "Исправлена критическая ошибка"
-```
-
-11. Завершите hotfix и объедините его с ветками "develop" и "main":
-
-```
-git flow hotfix finish hotfix-1.0.1
-```
-
-12. Завершение работы и отправка изменений на удаленный репозиторий. Отправьте изменения на удаленный репозиторий:
-
-```
-git push origin develop
-git push origin main
-
-```
-### Как успешно сдать работу?
-
-Создать свой репозиторий из шаблона этого. Как это делается - "Use this template" -> "Create a new repository" и сделайте его public. 
-
-Находясь уже в своем репозитории - создайте новый файл формата .md и там оформляйте отчет. В отчете опишите все шаги которые вы делали, чтобы получить финальный результат работы.
-
-Что вам нужно знать, чтобы успешно защитить работу:
-
-Основные команды Git, как возникают и как решать конфликты, Git Hooks, Git Flow. 
-
-## Ресурсы
-
-1. [Git Documentation](https://git-scm.com/doc)
-2. [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials)
-3. [Pro Git Book](https://git-scm.com/book/en/v2)
-4. [Markdown Guidelines](https://docs.github.com/ru/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+Пушим изменения на репозиторий:
+![image](https://github.com/user-attachments/assets/c21f6f35-3aed-4d77-bfca-779f785bf32c)
